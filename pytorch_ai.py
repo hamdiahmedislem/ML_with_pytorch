@@ -20,7 +20,7 @@ def create_x(start_idx):
     for j in range(size_bashe):
         ind = start_idx * size_bashe + j
         if ind % 2 == 0:
-            img = Image.open("empty/" + em_data[ind // 2])
+            img = Image.open("empty/" + em_data[ind // 2]) #u should create the empty and notempty
             label = 1
         else:
             img = Image.open("notempty/" + nem_data[ind // 2])
@@ -87,4 +87,5 @@ for l in range(50) :
     plt.plot(np.arange(len(loss_mean_list)),loss_mean_list)
     print(loss_mean_list)
     plt.show()
+
 torch.save(model_0.state_dict(),PATH)
